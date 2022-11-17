@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,5 +37,10 @@ public class ExpenseController {
 	public void deleteExpenseById(@RequestParam("id") Long id) {
 		 expenseService.deleteExpenseById(id);
 		
+	}
+	
+	@PostMapping("/expenses")
+	public void saveExpenseDetails(@RequestBody Expense expense) {
+		System.out.println("Expense Details:"+expense);
 	}
 }
