@@ -40,7 +40,8 @@ public class ExpenseController {
 	}
 	
 	@PostMapping("/expenses")
-	public void saveExpenseDetails(@RequestBody Expense expense) {
-		System.out.println("Expense Details:"+expense);
+	public Expense saveExpenseDetails(@RequestBody Expense expense) {
+
+		return expenseService.saveExpenseDetails(expense);
 	}
 }

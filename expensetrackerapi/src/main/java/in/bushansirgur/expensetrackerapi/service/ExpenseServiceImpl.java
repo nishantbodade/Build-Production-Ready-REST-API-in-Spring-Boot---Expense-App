@@ -37,4 +37,10 @@ public class ExpenseServiceImpl implements ExpenseService {
 		
 	}
 
+	@Override
+	public Expense saveExpenseDetails(Expense expense) {
+			
+		return expenseRepo.save(expense);
+	}
+
 }
